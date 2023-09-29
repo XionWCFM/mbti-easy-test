@@ -13,7 +13,11 @@ const page = ({ params }: pageProps) => {
   const len = mbtiQuestionData.length;
   const pageNum = minusOne(Number(params.id));
   const validation = z.number().max(len).safeParse(pageNum);
-  console.log(validation);
+  if (validation.success) {
+    console.log(validation.data);
+  } else {
+    console.log(validation.error);
+  }
   return <div>page</div>;
 };
 
