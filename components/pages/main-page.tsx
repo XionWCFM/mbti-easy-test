@@ -1,26 +1,22 @@
 'use client';
-import { MBTIController } from '@/business/controller/mbti-controller';
-import { PersonalitiesController } from '@/business/controller/personalities-controller';
-import { personalityResultData } from '@/business/datas/persnoalities-data';
-import { PersonalitiesModel } from '@/business/model/personalities-model';
-import { MBTIService } from '@/business/services/mbti-service';
-import { PersonalitiesService } from '@/business/services/personalities-service';
+import { mbtiQuestionAtom, testAtom, testSetAtom } from '@/store';
+import { useAtom } from 'jotai';
 import React from 'react';
-import { mbtiQuestionData } from '@/business/datas/mbti-data';
 
 interface MainPageProps {}
 
 const MainPage = ({}: MainPageProps) => {
-  const mbtiService = new MBTIService();
-  const mbtiController = new MBTIController(mbtiService);
+  const [mbti, setMbti] = useAtom(mbtiQuestionAtom);
+  const [test, setTest] = useAtom(testAtom);
+  const [_, setTesting] = useAtom(testSetAtom);
 
-  const personalitiesModel = new PersonalitiesModel(personalityResultData);
-  const personalitiesService = new PersonalitiesService(personalitiesModel);
-  const personalitiesController = new PersonalitiesController(
-    personalitiesService,
+  console.log(mbti);
+  return (
+    <div className="">
+      <div className="">{test}테스트 값</div>
+      <button onClick={() => setTesting(2)}>setTest</button>
+    </div>
   );
-
-  return <div className="">ㄴㅁㅇㄴㅁ</div>;
 };
 
 export default MainPage;

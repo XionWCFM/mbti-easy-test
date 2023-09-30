@@ -1,3 +1,4 @@
+import Providers from '@/components/provider/providers';
 import './globals.css';
 import type { Metadata } from 'next';
 import { Noto_Sans_KR } from 'next/font/google';
@@ -20,7 +21,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ko">
-      <body className={notosans.className}>{children}</body>
+      <body className={notosans.className}>
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }

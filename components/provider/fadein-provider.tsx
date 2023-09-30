@@ -1,5 +1,5 @@
 'use client';
-import useAnimation from '@/hooks/use-animation';
+import useAnimation from '@/hooks/ui-hooks/use-animation';
 import React from 'react';
 
 interface FadeInProviderProps {
