@@ -1,20 +1,26 @@
 'use client';
-import { CategoryOfMBTI } from '@/business/types/mbti-types';
+import useSetAnswerMbti from '@/hooks/business-hooks/use-set-answer-mbti';
+import { UpdateAnswer, mbtiAnswerAtom } from '@/store';
+import { useAtom } from 'jotai';
 import React, { ComponentPropsWithRef, Ref } from 'react';
 
 interface AnswerButtonProps extends ComponentPropsWithRef<'button'> {
-  value: CategoryOfMBTI;
-  pageNum: number;
+  update: UpdateAnswer;
 }
 
 const AnswerButton = (
-  { children, value, pageNum }: AnswerButtonProps,
+  { children, update }: AnswerButtonProps,
   ref: Ref<HTMLButtonElement>,
 ) => {
-  console.log(value);
-  console.log(pageNum);
-  
-  return <button ref={ref}>{children}</button>;
+  const setAnswer = useSetAnswerMbti();
+  const onClickHandler = () => setAnswer(update);
+  const [answer, _] = useAtom(mbtiAnswerAtom);
+  console.log(answer);
+  return (
+    <button ref={ref} onClick={onClickHandler}>
+      {children}
+    </button>
+  );
 };
 
 export default React.forwardRef(AnswerButton);

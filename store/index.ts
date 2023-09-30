@@ -10,8 +10,8 @@ import { CategoryOfMBTI } from '@/business/types/mbti-types';
 import { PersonalitiesEnum } from '@/business/types/personalities-types';
 import { atom } from 'jotai';
 
-type UpdateAnswer = {
-  key: number | string;
+export type UpdateAnswer = {
+  pageNum: number | string;
   value: CategoryOfMBTI;
 };
 
@@ -34,10 +34,9 @@ export const setMbtiAnswerAtom = atom(
   null,
   (_get, set, update: UpdateAnswer) => {
     set(mbtiAnswerAtom, (prev) => {
-      const stringfyKey = String(update.key);
+      const stringfyKey = String(update.pageNum);
       return {
-        ...prev,
-        [stringfyKey]: update.value,
+        model: { ...prev.model, [stringfyKey]: update.value },
       };
     });
   },

@@ -25,8 +25,10 @@ const page = ({ params }: pageProps) => {
             {mbtiQuestionData[pageNum].choices.map((item, idx) => (
               <AnswerButton
                 key={item.label}
-                value={item.value}
-                pageNum={pageNum}
+                update={{
+                  value: item.value,
+                  pageNum: pageNum,
+                }}
               >
                 {item.label}
               </AnswerButton>
