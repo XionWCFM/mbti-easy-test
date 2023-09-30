@@ -75,4 +75,4 @@ export const personalityResultData: PersonalityResultData = {
     category: 'ESTJ',
     content: ['고집이 셈', '사람 많은 거 싫어함', '외로움 별로 안탐'],
   },
-} as const;
+};

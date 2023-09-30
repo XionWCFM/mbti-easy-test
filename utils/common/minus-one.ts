@@ -1,3 +1,6 @@
 export const minusOne = (num: number) => {
-  return num - 1 > -1 ? num - 1 : 0;
+  if (num - 1 > -1) {
+    return num - 1;
+  }
+  throw new Error('0 이하의 값을 넣으시면 안됩니다.')
 };
