@@ -1,9 +1,8 @@
 import { MBTIController } from '@/business/controller/mbti-controller';
 import { PersonalitiesController } from '@/business/controller/personalities-controller';
 import { questionNumberAndValue } from '@/business/datas/mbti-answer-data';
-import { mbtiQuestionData } from '@/business/datas/mbti-question-data';
 import { personalityResultData } from '@/business/datas/persnoalities-data';
-import { MBTIQuestionListModel } from '@/business/model/mbti-model';
+import { MBTIAnswerModel } from '@/business/model/mbti-model';
 import { PersonalitiesModel } from '@/business/model/personalities-model';
 import { MBTIService } from '@/business/services/mbti-service';
 import { PersonalitiesService } from '@/business/services/personalities-service';
@@ -16,7 +15,7 @@ type UpdateAnswer = {
   value: CategoryOfMBTI;
 };
 
-const mbtiModel = new MBTIQuestionListModel(questionNumberAndValue);
+const mbtiModel = new MBTIAnswerModel(questionNumberAndValue);
 
 const mbtiService = new MBTIService();
 const mbtiController = new MBTIController(mbtiService);

@@ -1,5 +1,5 @@
 import { QuestionNumberAndValue } from '../types/mbti-types';
-export class MBTIQuestionListModel {
+export class MBTIAnswerModel {
   model: QuestionNumberAndValue;
   constructor(model: QuestionNumberAndValue) {
     this.model = model;
