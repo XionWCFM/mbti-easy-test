@@ -1,5 +1,5 @@
 import React from 'react';
-import { mbtiQuestionData } from '@/business/datas/mbti-data';
+import { mbtiQuestionData } from '@/business/datas/mbti-question-data';
 import z from 'zod';
 import { minusOne } from '@/utils/common/minus-one';
 
