@@ -14,6 +14,7 @@ const page = ({ params }: pageProps) => {
   const len = mbtiQuestionData.length;
   const pageNum = minusOne(Number(params.id));
   const validation = z.number().max(len).safeParse(pageNum);
+  const indexLen = minusOne(len);
   // eslint-disable-next-line react-hooks/rules-of-hooks
 
   return (
@@ -24,11 +25,14 @@ const page = ({ params }: pageProps) => {
           <div className="">
             {mbtiQuestionData[pageNum].choices.map((item, idx) => (
               <AnswerButton
-                key={item.label}
+                key={`${item.label} ${Math.floor(
+                  Math.random() * Math.random(),
+                )}`}
                 update={{
                   value: item.value,
                   pageNum: pageNum,
                 }}
+                indexLen={indexLen}
               >
                 {item.label}
               </AnswerButton>
