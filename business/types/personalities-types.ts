@@ -22,3 +22,30 @@ export type PersonalityResultData = {
     content: string[];
   };
 };
+
+
+/*
+
+const HamralProvider = ({children}) => {
+  const auth = useSelector((state) => state.accesstoken)
+  const router = useRouter()
+  if(auth) {
+    return <>{children}<>
+  } else {
+    return router.push('/')
+  }
+}
+
+const AuthNeed = () => {
+  return <div>어엄준식</div>
+}
+
+const page = () => {
+  return (
+    <HamralProvider>
+      <AuthNeed/>
+    </HamralProvider>
+  )
+}
+
+*/
