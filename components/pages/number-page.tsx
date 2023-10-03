@@ -19,12 +19,12 @@ const Numberpage = ({}: pageProps) => {
   useEffect(() => {
     const controls = animate(count, 100);
     return controls.stop;
-  }, []);
+  }, [count]);
 
   return (
     <>
       <motion.div>{rounded}</motion.div>
-      
+
       <motion.div
         style={{ scaleX: scrollYProgress, transformOrigin: '0%' }}
         className=" fixed top-0 left-0 right-0 h-[10px] bg-red-600"
