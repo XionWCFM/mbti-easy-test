@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@radix-ui/react-dialog": "^1.0.5",
     "class-variance-authority": "latest",
     "clsx": "^2.0.0",
     "framer-motion": "^10.16.4",

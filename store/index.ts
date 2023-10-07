@@ -51,3 +51,13 @@ export const getPersonalitiesResult = atom((get) => {
   }
   return personalitiesController.makeResult(personality);
 });
+
+export interface DialogType {
+  isOpen: boolean;
+  content: JSX.Element | null;
+}
+
+export const dialogAtom = atom<DialogType>({
+  isOpen: false,
+  content: null,
+});
