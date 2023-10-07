@@ -53,11 +53,11 @@ export const getPersonalitiesResult = atom((get) => {
 });
 
 export interface DialogType {
-  isOpen: boolean;
   content: JSX.Element | null;
 }
 
-export const dialogAtom = atom<DialogType>({
-  isOpen: false,
+export const dialogOpenAtom = atom(false);
+
+export const dialogContentAtom = atom<DialogType>({
   content: null,
 });
