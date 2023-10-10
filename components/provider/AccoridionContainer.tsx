@@ -11,7 +11,7 @@ const AccoridionContainer = ({}: AccoridionContainerProps) => {
       <AccordionPrimitive.Root type="single" collapsible>
         <AccordionPrimitive.Item value="item-1">
           <AccordionPrimitive.Trigger>누르면 열려요</AccordionPrimitive.Trigger>
-          <AccordionPrimitive.Content>
+          <AccordionPrimitive.Content className=" data-[state=open]:animate-slideDown data-[state=closed]:animate-slideUp overflow-hidden bg-purple-600 ">
             여기 안에 콘텐츠가 들어가요
           </AccordionPrimitive.Content>
         </AccordionPrimitive.Item>
