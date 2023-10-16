@@ -1,6 +1,7 @@
 'use client';
 import React from 'react';
 import { motion, useMotionValue, useTransform, Variants } from 'framer-motion';
+import SwitchContainer from '../provider/switch-container';
 
 interface MainPageProps {}
 
@@ -47,7 +48,10 @@ const MainPage = ({}: MainPageProps) => {
         onClick={() => setIsClicked((s) => !s)}
         animate={isClicked ? 'clicked' : 'unClicked'}
         variants={clipboardIconVariants}
-      >안녕하세요</motion.div>
+      >
+        안녕하세요
+      </motion.div>
+      <SwitchContainer />
     </div>
   );
 };
