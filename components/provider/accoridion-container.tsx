@@ -1,11 +1,13 @@
 'use client';
 import * as AccordionPrimitive from '@radix-ui/react-accordion';
 
-import React from 'react';
+import React, { useState } from 'react';
 
 interface AccoridionContainerProps {}
 
 const AccoridionContainer = ({}: AccoridionContainerProps) => {
+  const [val, setVal] = useState(0);
+
   return (
     <div>
       <AccordionPrimitive.Root type="single" collapsible>

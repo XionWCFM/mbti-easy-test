@@ -1,6 +1,6 @@
 import MainPage from '@/components/pages/main-page';
 import Numberpage from '@/components/pages/number-page';
-import AccoridionContainer from '@/components/provider/AccoridionContainer';
+import AccoridionContainer from '@/components/provider/accoridion-container';
 import Link from 'next/link';
 
 export default function Home() {
